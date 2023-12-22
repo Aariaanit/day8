@@ -1,20 +1,84 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { Button, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-export default function App() {
+
+
+import HomeScreen from './src/screens/HomeScreen';
+import AboutScreen from './src/screens/AboutScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+
+const Drawer = createDrawerNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator
+        initialRouteName='Home'
+        drawerPosition="left"
+        drawerType="front"
+        edgeWidth={100}
+        hideStatusBar={false}
+        overlayColor='#000000'
+        drawerStyle={{
+          backgroundColor: '#898989',
+          with: 250
+        }}
+        screenOptions={{
+          headerShown: true,
+          swipeEnabled:true,
+          gestureEnabled:true
+        }}
+      >
+        <Drawer.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{
+            title: "Home Screen",
+            drawerIcon: ({focused}) => (
+              <Ionicons 
+                name='home'
+                size={24} 
+                color={focused ? "#0080ff" : "#999999"}
+              />
+            )
+          }}
+        />
+        <Drawer.Screen 
+          name="About" 
+          component={AboutScreen} 
+          options={{
+            title: "About Screen",
+            drawerIcon: ({focused}) => (
+              <Ionicons 
+                name='person'
+                size={24} 
+                color={focused ? "#0080ff" : "#999999"}
+              />
+            )
+          }}
+          initialParams={{ itemName: 'Item from Drawer', itemId: 12 }}
+          />
+        <Drawer.Screen 
+          name="Settings" 
+          component={SettingsScreen} 
+          options={{
+            title: "Settings Screen",
+            drawerIcon: ({focused}) => (
+              <Ionicons 
+                name='settings'
+                size={24} 
+                color={focused ? "#0080ff" : "#999999"}
+              />
+            )
+          }}
+        />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
