@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
-import styles from '../style';
 
 function AboutScreen({navigation, route}) {
 
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
       fontSize: 40,
       fontWeight: 'bold',
       margin: 10,
-      fontFamily: 'Roboto-Bold'
 
     }
   })
