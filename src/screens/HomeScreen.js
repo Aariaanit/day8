@@ -1,7 +1,5 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
-import GlobalStyle from '../utils/GlobalStyle';
-import {  useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 
 function HomeScreen({navigation}) {
     
@@ -10,10 +8,7 @@ function HomeScreen({navigation}) {
   }
       return (
         <View style={styles.body}>
-          <Text style={[
-            GlobalStyle.CustomFont,
-            styles.text
-            ]}>
+          <Text>
             Home Page
           </Text>
           <Pressable

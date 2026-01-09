@@ -1,16 +1,12 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import { Button, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import "react-native-gesture-handler";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-
-
-import HomeScreen from './src/screens/HomeScreen';
-import AboutScreen from './src/screens/AboutScreen';
-import SettingsScreen from './src/screens/SettingsScreen';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import HomeScreen from "./src/screens/HomeScreen";
+import AboutScreen from "./src/screens/AboutScreen";
+import SettingsScreen from "./src/screens/SettingsScreen";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Drawer = createDrawerNavigator();
 
@@ -18,63 +14,63 @@ function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator
-        initialRouteName='Home'
+        initialRouteName="Home"
         drawerPosition="left"
         drawerType="front"
         edgeWidth={100}
         hideStatusBar={false}
-        overlayColor='#000000'
+        overlayColor="#000000"
         drawerStyle={{
-          backgroundColor: '#898989',
-          with: 250
+          backgroundColor: "#898989",
+          with: 250,
         }}
         screenOptions={{
           headerShown: true,
-          swipeEnabled:true,
-          gestureEnabled:true
+          swipeEnabled: true,
+          gestureEnabled: true,
         }}
       >
-        <Drawer.Screen 
-          name="Home" 
-          component={HomeScreen} 
+        <Drawer.Screen
+          name="Home"
+          component={HomeScreen}
           options={{
             title: "Home Screen",
-            drawerIcon: ({focused}) => (
-              <Ionicons 
-                name='home'
-                size={24} 
+            drawerIcon: ({ focused }) => (
+              <Ionicons
+                name="home"
+                size={24}
                 color={focused ? "#0080ff" : "#999999"}
               />
-            )
+            ),
           }}
         />
-        <Drawer.Screen 
-          name="About" 
-          component={AboutScreen} 
+        <Drawer.Screen
+          name="About"
+          component={AboutScreen}
           options={{
             title: "About Screen",
-            drawerIcon: ({focused}) => (
-              <Ionicons 
-                name='person'
-                size={24} 
+            drawerIcon: ({ focused }) => (
+              <Ionicons
+                name="person"
+                size={24}
                 color={focused ? "#0080ff" : "#999999"}
               />
-            )
+            ),
           }}
-          initialParams={{ itemName: 'Item from Drawer', itemId: 12 }}
-          />
-        <Drawer.Screen 
-          name="Settings" 
-          component={SettingsScreen} 
+          initialParams={{ itemName: "Item from Drawer", itemId: 12 }}
+        />
+        <Drawer.Screen
+          name="Settings"
+          component={SettingsScreen}
           options={{
             title: "Settings Screen",
-            drawerIcon: ({focused}) => (
-              <Ionicons 
-                name='settings'
-                size={24} 
+            drawerIcon: ({ focused }) => (
+              <Ionicons
+                name="settings"
+                size={24}
                 color={focused ? "#0080ff" : "#999999"}
               />
-            )
+            ),
           }}
         />
       </Drawer.Navigator>
