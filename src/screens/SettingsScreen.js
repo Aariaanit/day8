@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
+import GlobalStyle from '../utils/GlobalStyle';
 
 function SettingsScreen({navigation}) {
     
@@ -9,14 +10,14 @@ function SettingsScreen({navigation}) {
   }
       return (
         <View style={styles.body}>
-          <Text style={styles.text}>
+          <Text style={[styles.text, GlobalStyle.CustomFont]}>
             Settings Page
           </Text>
           <Pressable
             onPress={onPressHandler}
             style={({ pressed }) => ({ backgroundColor: pressed ? '#ddd' : '#0f0' })}
           >
-            <Text style={styles.text}>
+            <Text style={[styles.text, GlobalStyle.CustomFont]}>
               Toggle Drawer
             </Text>
           </Pressable>

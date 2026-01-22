@@ -2,11 +2,11 @@ import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import AboutScreen from "./src/screens/AboutScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Drawer = createDrawerNavigator();
 

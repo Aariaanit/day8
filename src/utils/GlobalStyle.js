@@ -7,5 +7,6 @@ export default StyleSheet.create({
     ButtonText: {
         fontSize: 30,
         padding: 10,
-    }
+    },
+    
 });
