@@ -1,5 +1,4 @@
 import "react-native-gesture-handler";
-import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Ionicons } from "@expo/vector-icons";
@@ -22,7 +21,7 @@ function App() {
         overlayColor="#000000"
         drawerStyle={{
           backgroundColor: "#898989",
-          with: 250,
+          width: 250,
         }}
         screenOptions={{
           headerShown: true,
